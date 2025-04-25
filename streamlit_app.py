@@ -14,7 +14,8 @@ s3 = boto3.client(
     's3',
     aws_access_key_id=AWS_ACCESS_KEY,
     aws_secret_access_key=AWS_SECRET_KEY,
-    region_name=REGION
+    region_name=REGION,
+    config=boto3.session.Config(signature_version='s3v4')  # ← Critical for newer regions
 )
 
 st.title("📁 Upload Files to S3")
