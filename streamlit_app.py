@@ -19,6 +19,6 @@ s3 = boto3.client(
 )
 try:
     s3.list_objects(Bucket=S3_BUCKET, MaxKeys=1)
-    print("Credentials valid")
+    st.text("Credentials valid")
 except Exception as e:
-    print("Credential error:", e)
+    st.text("Credential error:", e)
