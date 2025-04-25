@@ -21,4 +21,4 @@ try:
     s3.list_objects(Bucket=S3_BUCKET, MaxKeys=1)
     st.text("Credentials valid")
 except Exception as e:
-    st.text("Credential error:")
+    st.text(e)
